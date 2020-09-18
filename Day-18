@@ -1,0 +1,16 @@
+https://leetcode.com/explore/challenge/card/september-leetcoding-challenge/556/week-3-september-15th-september-21st/3464/
+Code:
+
+class Solution {
+public:
+    int maxProfit(vector<int>& prices) {
+        int n=prices.size();
+        if(n<=1) return 0;
+        int min_so_far=prices[0],ans=0;
+        for(int i=1; i<n; i++){
+            min_so_far=min(min_so_far, prices[i]);
+            ans=max(ans, prices[i]-min_so_far);
+        } 
+        return ans;
+    }
+};
